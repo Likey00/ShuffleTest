@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/socialeyescss.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/materialize.min.css') }}">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<title>DB Upload</title>
+</head>
+
+<body>
+
+	
+
+	<div class="section black">
+		<div class="row">
+			<div class="col s12 white-text">
+				<h3 class="center">Upload File To DB</h3>
+
+				<form method="POST" enctype=multipart/form-data> <div class="col s12 center">
+					<div class="input-field col s3">
+					  <input name="num_classes" placeholder="Number of Classes" type="text" class="validate">
+					</div>
+					<div class="input-field col s3">
+						<input name="test_title" placeholder="Test/Unit" type="text" class="validate" color="white">
+					</div>
+					  
+					
+					<input type=file name=file id=file class=inputfile>
+					<label for="file">Choose a file</label>
+					<span>&nbsp &nbsp</span>
+				<input type=submit value=Upload>
+				</form>
+				<span>&nbsp &nbsp</span>
+				<a id="download-button" class="btn-large waves-effect waves-color:#1dcaff"href="{{ url_for('view_tests') }}">Test Bank</a>
+
+			</div>
+			<div class="col s12 center white-text">
+				{% if msg %}
+				<h4>{{ msg }}</h4>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="iconsection">
+	<div class="formattingsection">
+		<div class="section">
+			<div class="row">
+				<div class="col s8 black-text">
+					<h3 class="center black-text">Formatting</h3>
+
+					<ol class="black-text"><b>
+						<li>Make sure you disable automatic list detection. On Google Docs this is Tools >> Preferences
+							>> Automatic List Detection</li>
+						<li>Start with 1. "First Question", make sure to have a space after the period for every
+							question</li>
+						<li>Use an empty line after question to signify its end</li>
+						<li>Multiple Choice Question choices are to go under the question, with no empty lines in
+							between</li>
+						<li>Denote the correct multiple choice answer by a * in front of the letter</li>
+						<li>In Free Response Questions, you may surround some variables in brackets [] to randomize
+							those values in the tests</li></b>
+					</ol>
+
+				</div>
+				<div class="col s4">
+					<img src="static/styles/properformat.png" style="width:600px;height:400px">
+				</div>
+
+			</div>
+		</div>
+		</div>
+	</div>
+
+	<footer class="page-footer teal">
+    <div class="container">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="col s12">
+          <h5 class="white-text">Our Mission</h5>
+          <p class="grey-text text-lighten-4">We seek to drastically reduce cheating in schools, since it is unfair to kids who don't have such an advantage. Use of our product is both easy and will reduce cheating significantly.</p>
+  </footer>
+
+
+
+
+	{% if doc_src %}
+
+	<object src="{{ doc_src }}"><embed src="{{ doc_src }}"></embed></object>
+
+	{% endif %}
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+
+</html>
+
+<!doctype html>

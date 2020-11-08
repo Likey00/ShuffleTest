@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ShuffleTest</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/socialeyescss.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/materialize.min.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot col s6">
+      <div class="container">
+        <br><br>
+        <h1 class="header center dark">ShuffleTest</h1>
+        <div class="row center">
+          <h5 class="header col s12 dark">A convenient online service where you submit a docx of a test, and it returns multiple shuffled copies</h5>
+        </div>
+		<div class="row center">
+          <a id="download-button" class="btn-large waves-effect waves-color:#1dcaff"href="{{ url_for('upload_file') }}">Simple Upload</a>
+		  <span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</span>
+		  <a id="download-button" class="btn-large waves-effect waves-color:#1dcaff"href="{{ url_for('upload_db') }}">Upload to DB</a>
+		  <span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</span>
+		  <a id="download-button" class="btn-large waves-effect waves-color:#1dcaff"href="{{ url_for('view_tests') }}">Test Bank</a>
+        </div>
+		
+        <br><br>
+		</div>
+      </div>
+	  <div class="row center col s1">
+          <img src="static/styles/cardslogo.png">
+        </div>
+	  <div class="parallax"><img src="static/styles/black.jpg" alt="Unsplashed background img 1"></div>
+    </div>
+    
+  </div>
+
+	 <div class="iconsection">
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons large">person</i></h2>
+            <h5 class="center">Who We Are</h5>
+
+            <p class="light"><b>We are two high school students who feel passionate about an even playing field for all students academically.</b></p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons large">error_outline</i></h2>
+            <h5 class="center">The Problem</h5>
+
+            <p class="light"><b>Many students in our school cheat, far more than a couple. Oftentimes this cheating occurs through sharing of test answers between classes or copying off classmates during the test.</b></p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons large">lightbulb_outline</i></h2>
+            <h5 class="center">The Solution</h5>
+
+            <p class="light"><b>Our simple web app, Test Flipper, shuffles up the order of test questions as well as the order of answer choices, making cheating nearly impossible between students.</b></p>
+          </div>
+        </div>
+      </div>
+	  </div>
+
+    </div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="col s12">
+          <h5 class="white-text">Our Mission</h5>
+          <p class="grey-text text-lighten-4">We seek to drastically reduce cheating in schools, since it is unfair to kids who don't have such an advantage. Use of our product is both easy and will reduce cheating significantly.</p>
+  </footer>
